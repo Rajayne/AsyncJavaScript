@@ -15,12 +15,20 @@ async function requestNums() {
 }
 
 // 3. Get 4 facts and list on HTML page
+// async function appendFacts() {
+//     let facts = await Promise.all(
+//       Array.from({ length: 4 }, () => $.getJSON(`${url}/${favNumber}?json`))
+//     );
+//     facts.forEach(data => {
+//       $('body').append(`<p>${data.text}</p>`);
+//     });
+//   }
+// appendFacts();
+
 async function appendFacts() {
-    let facts = await Promise.all(
-      Array.from({ length: 4 }, () => $.getJSON(`${url}/${favNumber}?json`))
-    );
-    facts.forEach(data => {
-      $('body').append(`<p>${data.text}</p>`);
-    });
+  for (let i = 0; i < 4; i++) {
+    const data = await $.getJSON(`${url}/${favNumber}?json`);
+    $('body').append(`<p>${data.text}</p>`);
   }
+}
 appendFacts();
