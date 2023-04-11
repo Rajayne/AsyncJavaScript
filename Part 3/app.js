@@ -110,3 +110,27 @@ class Pokemon {
         }
     }
 }
+
+function getThreePokemon() {
+    axios.get(`${url}/1`)
+    .then(({data}) => {
+        console.log(`The first pokemon is ${data.name}`)
+        return axios.get(`${url}/2`)
+    })
+    .then(({data}) => {
+        console.log(`The second pokemon is ${data.name}`)
+        return axios.get(`${url}/3`)
+    })
+    .then(({data}) => {
+        console.log(`The third pokemon is ${data.name}`)
+    })
+}
+
+async function getThreePokemonAsyc() {
+    let {data: p1} = await axios.get(`${url}/1`)
+    console.log(p1.name)
+    let {data: p2} = await axios.get(`${url}/2`)
+    console.log(p2.name)
+    let {data: p3} = await axios.get(`${url}/3`)
+    console.log(p3.name)
+}
