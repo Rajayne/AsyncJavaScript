@@ -74,3 +74,20 @@ async function shufflePartialDeck(deckId) {
     data = axios.get(`${cardURL}/${deckId}/shuffle/?remaining=true`)
     data.then((res) => console.log(res.data))
 }
+
+
+/* **************************REWRITE CARDS API************************** */
+const deck = {
+    async init() {
+        let res = await axios.get(`${cardURL}/new`)
+        this.deckId = res.data.deck_id;
+    },
+    async shuffle() {
+        let res = await axios.get(`${cardURL}/${this.deckId}/shuffle`)
+        console.log(res);
+    },
+    async drawCard() {
+        let res = await axios.get(`${cardURL}/${this.deckId}/draw`)
+        console.log(res.data)
+    }
+}
