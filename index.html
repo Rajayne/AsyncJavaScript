@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+    <title>Asnc JavaScript</title>
 </head>
 <body>
     <ul class="facts">
     </ul>
+    <button id="draw">Draw a Card!</button>
+    <div class="cards"></div>
+    <h4 style="text-align: center;">Cards Remaining: <p id="remaining"></p></h4>
+    <div class="bottom">
+        <button id="shuffle">Shuffle Deck</button> <button id="new">New Deck</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
 <script src="app.js"></script>
 </html>

@@ -1,0 +1,31 @@
+button {
+    padding: 10px;
+    background-color: gray;
+    color: white;
+    border-radius: 8px;
+    margin: 1rem auto;
+    display: block;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #444;
+}
+
+.bottom {
+    vertical-align: bottom;
+    margin: 1rem auto;
+}
+
+.cards {
+  margin-top: 80px;
+  display: block;
+  height: 400px;
+}
+
+.cards > img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
