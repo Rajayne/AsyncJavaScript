@@ -134,3 +134,15 @@ async function getThreePokemonAsyc() {
     let {data: p3} = await axios.get(`${url}/3`)
     console.log(p3.name)
 }
+
+// Sequential Parallel Requests
+async function catchSomeOfEmParallel() {
+    let pokemon = await Promise.all([
+        axios.get(`${url}/1`),
+        axios.get(`${url}/2`),
+        axios.get(`${url}/3`)
+    ])
+
+    console.log(`First: ${pokemon[0].data.name}, Second: ${pokemon[1].data.name}, Third: ${pokemon[2].data.name}`)
+}
+
