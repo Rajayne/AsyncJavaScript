@@ -44,6 +44,8 @@ async function requestDeck() {
     data.then((res) => deckId = res.data.deck_id)
     $("#remaining").html(`${cards}`)
     $("#draw").show()
+    $("#shuffle").show()
+    $(".cards").empty()
 }
 
 // 2. Request cards from same deck
@@ -56,6 +58,7 @@ async function requestCard(deckId) {
     if (cards == 0) {
         $("#remaining").html(`Start a new deck!`)
         $("#draw").hide()
+        $("#shuffle").hide()
     }
 }
 
